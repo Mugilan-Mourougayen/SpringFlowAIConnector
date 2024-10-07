@@ -19,34 +19,22 @@ export function SignupForm() {
   return (
     <div className="max-w-md mx-auto mt-10">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className='flex flex-row gap-10'>
           <Input
-            label="First Name"
+            label="Username"
             type="text"
-            name="name"
+            name="userName"
             register={register}
             control={control}
-            validation={{ required: "first name is required" }}
-            error={errors.name}
+            validation={{ required: "Username is required" }}
+            error={errors.userName}
           />
-
-          <Input
-            label="Last Name"
-            type="text"
-            name="lastName"
-            register={register}
-            control={control}
-            validation={{ required: "last name is required" }}
-            error={errors.name}
-          />
-        </div>
         <Input
-          label="email"
+          label="Email"
           type="text"
           name="email"
           register={register}
           control={control}
-          validation={{ required: "email is required" }}
+          validation={{ required: "Email is required" }}
           error={errors.email}
         />
         <Input
