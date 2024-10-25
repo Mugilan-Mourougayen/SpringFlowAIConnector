@@ -5,18 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78aaa4a8-4b11-4303-8d5c-1e383f3229ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/controller/BlogsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/repository/BlogsRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/BlogService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/Mapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/Dto/PblogDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/Dto/PersonalBlogDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/components/Editor/Editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Editor/Editor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/forms/SignupForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/forms/SignupForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/components/forms/loginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/forms/loginForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/modal/Blogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/modal/Blogs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/controller/BlogsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/controller/BlogsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/repository/BlogsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/repository/BlogsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/BlogService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,7 +268,7 @@
       <workItem from="1726955406806" duration="545000" />
       <workItem from="1728858866286" duration="9797000" />
       <workItem from="1729285544402" duration="599000" />
-      <workItem from="1729776557944" duration="12922000" />
+      <workItem from="1729776557944" duration="20784000" />
     </task>
     <servers />
   </component>

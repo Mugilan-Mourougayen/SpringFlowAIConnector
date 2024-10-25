@@ -1,9 +1,12 @@
 package com.example.mainapp.controller;
 
+import com.example.mainapp.Dto.PblogDto;
+import com.example.mainapp.Dto.PersonalBlogDto;
 import com.example.mainapp.modal.Blogs;
 import com.example.mainapp.service.BlogService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -40,5 +43,26 @@ public class BlogsController {
     public String check (){
         return "login assess checkblog" ;
     }
+
+    @GetMapping("/getallpublished")
+    public List<PblogDto> getallpublished(){
+        List<PblogDto> blogs = blogService.getallpublished();
+        return blogs;
+    }
+
+    @GetMapping("/getallbyuser")
+    public List<PersonalBlogDto> getallbyuser(){
+        String userName = blogService.getUserDetails();
+        List<PersonalBlogDto> blogs = blogService.getallblogbyuser(userName);
+        return blogs;
+    }
+
+    @DeleteMapping("/delete/")
+    public String deleteblog(@RequestParam("blogid") UUID uuid){
+      String result = blogService.deleteblog(uuid);
+      return result;
+
+    }
+
 
 }

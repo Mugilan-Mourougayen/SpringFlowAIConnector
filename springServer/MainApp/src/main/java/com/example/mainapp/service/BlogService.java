@@ -1,5 +1,7 @@
 package com.example.mainapp.service;
 
+import com.example.mainapp.Dto.PblogDto;
+import com.example.mainapp.Dto.PersonalBlogDto;
 import com.example.mainapp.modal.Blogs;
 import com.example.mainapp.repository.BlogsRepository;
 import org.springframework.security.core.Authentication;
@@ -7,6 +9,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -25,12 +28,17 @@ public class BlogService {
         return blog;
     }
 
+    public List<PblogDto> getallpublished( ){
+        List<PblogDto> blogs =blogsRepository.findAllpublished();
+        return blogs;
+    }
+
     public String getUserDetails() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication.getPrincipal() instanceof UserDetails) {
             UserDetails userDetails = (UserDetails) authentication.getPrincipal();
             String username = userDetails.getUsername();
-            return "Current username: " + username;
+            return username;
         }
         return "Anonymous User";
     }
@@ -50,5 +58,22 @@ public class BlogService {
         Optional<Blogs> existing = blogsRepository.findById(uuid);
         Blogs existingBlog = existing.get();
         return existingBlog;
+    }
+
+    public List<PersonalBlogDto> getallblogbyuser(String userName) {
+        List<PersonalBlogDto> blogs =blogsRepository.findBlogsByUserName(userName);
+        return blogs;
+
+    }
+
+    public String deleteblog(UUID uuid) {
+
+
+        Optional<Blogs> existing = blogsRepository.findById(uuid);
+        if (existing.isPresent()) {
+            blogsRepository.deleteById(uuid);
+            return "Deleted Sucessfully";
+        }
+        return "Blog does not exist";
     }
 }

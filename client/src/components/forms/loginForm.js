@@ -28,7 +28,7 @@ export function LoginForm() {
           //todo : handle properly
           console.log(data)
           localStorage.setItem('token', data);
-          navigate("/editor");
+          navigate("/");
         })
       .catch(error => {
 

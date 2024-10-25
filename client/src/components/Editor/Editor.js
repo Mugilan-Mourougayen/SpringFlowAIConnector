@@ -3,20 +3,22 @@
 
 import React, { useState, useEffect } from 'react';
 import Editor from '../forms/Inputs/Editor';
+import { Button } from '@mui/material';
 
 const EditorPage = ( ) => {
-  const queryParameters = new URLSearchParams(window.location.search)
-  const articleId = queryParameters.get("articleId")
+
   const [article, setArticle] = useState({
     uuid: '',
     title: '',
     description: '',
     userName:'',
     content: '',
-    lastUpdateAt: new Date(),
+    lastUpdateAt: null,
     publishedAt: null,
     published:false
   });
+
+
 
 
   const checkToken = async () => {
@@ -30,7 +32,7 @@ const EditorPage = ( ) => {
         }
       });
       if(response.ok){
-        const data = await response.text(); // Get the response data as JSON
+        const data = await response.text();
         console.log(data);
         return response.ok;
       }
@@ -53,22 +55,20 @@ const EditorPage = ( ) => {
 
       const articleData = await response.json();
       setArticle(articleData);
+      console.log("count")
     } catch (error) {
       console.error('Error fetching article:', error);
     }
   };
 
   useEffect(() => {
+    const queryParameters = new URLSearchParams(window.location.search)
+    const articleId = queryParameters.get("articleId")
 
     if (articleId) {
-      console.log(articleId)
       fetchArticle(articleId);
-    } else {
-      setArticle((prevArticle) => ({
-        ...prevArticle,
-      }));
     }
-  }, [articleId]);
+  }, []);
 
 
   const handleChange = (e) => {
@@ -86,23 +86,32 @@ const EditorPage = ( ) => {
       content,
     }));
   };
-  const onPbulish = async () => {
-    setArticle((prevArticle) => ({
-      ...prevArticle,
-      published: true,
-      publishedAt: new Date()
-    }));
 
-    onSubmit();
-  }
-  const onSubmit = async () => {
+
+  const onPublish = async () => {
+    const updatedArticle = {
+      ...article,
+      published: true,
+      publishedAt: new Date(),
+      lastUpdateAt: new Date(),
+    };
+
+    setArticle(updatedArticle);
+    await onSubmit(updatedArticle);
+
+  };
+
+
+
+  const onSubmit = async (updatedArticle = article) => {
+
     const isTokenValid = await checkToken();
     console.log(isTokenValid)
     if (!isTokenValid) {
       alert('Invalid token. Please log in again.');
       return;
     }
-    console.log("from editor", article);
+    console.log("from editor", updatedArticle);
     const token = localStorage.getItem('token');
     console.log("from editor", token);
     const requestOptions = {
@@ -111,7 +120,7 @@ const EditorPage = ( ) => {
             'Authorization': `Bearer ${token}`,
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(article)
+        body: JSON.stringify(updatedArticle)
     };
 
     try {
@@ -120,7 +129,7 @@ const EditorPage = ( ) => {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
         const responseData = await response.json();
-        console.log(responseData);
+        setArticle(responseData);
     } catch (error) {
         console.error('There was an error with the fetch request:', error);
     }
@@ -130,7 +139,7 @@ const EditorPage = ( ) => {
 
   return (
     <div className="max-w-[900px] mx-auto mt-10">
-      <h3>{articleId ? 'Update Article' : 'Create Article'}</h3>
+
       <div>
         <label>Title</label>
         <input
@@ -162,15 +171,16 @@ const EditorPage = ( ) => {
       </div>
 
       { ! article.published &&
-<>
-      <button onClick={onSubmit} className="bg-slate-900 text-white py-2 px-4 mt-8">
-        {articleId ? 'Update' : 'Create'}
-      </button>
+    <div>
+      <br/> <br/>
+      <Button onClick={()=>onSubmit(article)} variant='contained'>
+       Save
+      </Button>
 
-      <button disabled = {articleId ? false:true} onClick={onPbulish} style={{marginLeft:"200px"}} className="bg-slate-900 text-white py-2 px-4 mt-8">
+      <Button  onClick={onPublish} style={{marginLeft:"200px"}} variant='contained'>
          Publish
-      </button>
-      </>
+      </Button>
+      </div>
 
 }
     </div>
