@@ -1,10 +1,11 @@
 
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
-import Input from './Inputs/Input'; 
+import { Link,useNavigate } from 'react-router-dom';
+import Input from './Inputs/Input';
 
 export function LoginForm() {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -12,8 +13,27 @@ export function LoginForm() {
     formState: { errors },
   } = useForm();
 
+
   const onSubmit = (data) => {
-    console.log(data); //
+    console.log("from login",data)
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+  };
+  fetch('http://localhost:8080/login', requestOptions)
+      .then(response => response.text())
+      .then(data =>
+        {
+          //todo : handle properly
+          console.log(data)
+          localStorage.setItem('token', data);
+          navigate("/editor");
+        })
+      .catch(error => {
+
+        console.error('There was an error with the fetch request:', error);
+    })
   };
 
   return (

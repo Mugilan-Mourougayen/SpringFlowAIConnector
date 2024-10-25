@@ -5,27 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="78aaa4a8-4b11-4303-8d5c-1e383f3229ff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/Security/UsersDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/config/JwtFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/config/Webconfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/config/springSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/controller/Userlogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/exception/UserAlreadyExistsException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/modal/Blogs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/modal/Users.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/UserDetailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/controller/BlogsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/repository/BlogsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/BlogService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/Mapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/components/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/Editor/Editor.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/Editor/Editor.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/forms/SignupForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/forms/SignupForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/forms/loginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/forms/loginForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainApp/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/MainApp/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MainApp/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/MainApp/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/modal/Blogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/modal/Blogs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/MainApp/src/main/java/com/example/mainapp/service/JwtService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,6 +267,9 @@
       <workItem from="1726096002285" duration="6514000" />
       <workItem from="1726526566038" duration="30341000" />
       <workItem from="1726955406806" duration="545000" />
+      <workItem from="1728858866286" duration="9797000" />
+      <workItem from="1729285544402" duration="599000" />
+      <workItem from="1729776557944" duration="12922000" />
     </task>
     <servers />
   </component>

@@ -14,19 +14,29 @@ public class Blogs {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID uuid;
     private String title;
+    private String description;
     private String userName;
     private String content;
     private Date lastUpdateAt;
     private Date publishedAt;
+    @Column(nullable = false, columnDefinition = "boolean default false")
+    private Boolean published;
 
-    public Blogs(UUID uuid, String title, String userName, String content, Date lastUpdateAt, Date publishedAt) {
+    public Blogs(UUID uuid, String title, String description,String userName, String content, Date lastUpdateAt, Date publishedAt,Boolean published) {
         this.uuid = uuid;
         this.title = title;
+        this.description = description;
         this.userName = userName;
         this.content = content;
         this.lastUpdateAt = lastUpdateAt;
         this.publishedAt = publishedAt;
+        this.published = published;
     }
+
+    public Blogs() {
+
+    }
+
 
     public UUID getUuid() {
         return uuid;
@@ -42,6 +52,14 @@ public class Blogs {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getUserName() {
@@ -74,6 +92,28 @@ public class Blogs {
 
     public void setPublishedAt(Date publishedAt) {
         this.publishedAt = publishedAt;
+    }
+
+    public Boolean getPublished() {
+        return published;
+    }
+
+    public void setPublished(Boolean published) {
+        this.published = published;
+    }
+
+    @Override
+    public String toString() {
+        return "Blogs{" +
+                "uuid=" + uuid +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", userName='" + userName + '\'' +
+                ", content='" + content + '\'' +
+                ", lastUpdateAt=" + lastUpdateAt +
+                ", publishedAt=" + publishedAt +
+                ", published=" + published +
+                '}';
     }
 }
 

@@ -1,8 +1,8 @@
 
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link } from 'react-router-dom';
-import Input from './Inputs/Input'; 
+import { Link,redirect } from 'react-router-dom';
+import Input from './Inputs/Input';
 
 export function SignupForm() {
   const {
@@ -13,7 +13,24 @@ export function SignupForm() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data); 
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+  };
+  fetch('http://localhost:8080/register', requestOptions)
+      .then(response => response.json())
+      .then(data =>
+        {
+          //todo : handle properly
+          console.log(data)
+          return redirect("/login");
+        })
+      .catch(error => {
+
+        console.error('There was an error with the fetch request:', error);
+    })
   };
 
   return (
@@ -22,7 +39,7 @@ export function SignupForm() {
           <Input
             label="Username"
             type="text"
-            name="userName"
+            name="username"
             register={register}
             control={control}
             validation={{ required: "Username is required" }}

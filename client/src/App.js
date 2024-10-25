@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
 import Editor from './components/Editor/Editor';
+import PrivateRoute from './components/Auth/PrivateRoute';
 
 function App() {
   return (
@@ -12,7 +13,10 @@ function App() {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/editor" element={<Editor/>}/>
+          <Route element={<PrivateRoute />}>
+                    <Route path="/editor" element={<Editor />} />
+                </Route>
+
         </Routes>
       </div>
     </Router>
